@@ -4,11 +4,11 @@ export GOFLAGS=-mod=vendor
 
 DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 VERSION=$(shell git describe --tags --match=v* --always --dirty)
-LD_FLAGS="-w -X github.com/poseidon/matchbox/matchbox/version.Version=$(VERSION)"
+LD_FLAGS="-w -X github.com/stephenl03/matchbox/matchbox/version.Version=$(VERSION)"
 
-REPO=github.com/poseidon/matchbox
-LOCAL_REPO=poseidon/matchbox
-IMAGE_REPO=quay.io/poseidon/matchbox
+REPO=github.com/stephenl03/matchbox
+LOCAL_REPO=matchbox
+IMAGE_REPO=stephenl03/matchbox
 
 .PHONY: all
 all: build test vet lint fmt
@@ -51,15 +51,15 @@ push:
 
 .PHONY: docker-image
 docker-image:
-	@sudo docker build --rm=true -t $(LOCAL_REPO):$(VERSION) .
-	@sudo docker tag $(LOCAL_REPO):$(VERSION) $(LOCAL_REPO):latest
+	docker build --rm=true -t $(LOCAL_REPO):$(VERSION) .
+	docker tag $(LOCAL_REPO):$(VERSION) $(LOCAL_REPO):latest
 
 .PHONY: docker-push
 docker-push: docker-image
-	@sudo docker tag $(LOCAL_REPO):$(VERSION) $(IMAGE_REPO):latest
-	@sudo docker tag $(LOCAL_REPO):$(VERSION) $(IMAGE_REPO):$(VERSION)
-	@sudo docker push $(IMAGE_REPO):latest
-	@sudo docker push $(IMAGE_REPO):$(VERSION)
+	docker tag $(LOCAL_REPO):$(VERSION) $(IMAGE_REPO):latest
+	docker tag $(LOCAL_REPO):$(VERSION) $(IMAGE_REPO):$(VERSION)
+	docker push $(IMAGE_REPO):latest
+	docker push $(IMAGE_REPO):$(VERSION)
 
 .PHONY: update
 update:
