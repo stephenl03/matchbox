@@ -10,7 +10,9 @@ import (
 )
 
 const ipxeBootstrap = `#!ipxe
-chain ipxe?uuid=${uuid}&mac=${mac:hexhyp}&domain=${domain}&hostname=${hostname}&serial=${serial} || exit
+chain ipxe?uuid=${uuid}&mac=${mac:hexhyp}&domain=${domain}&hostname=${hostname}&serial=${serial} ||
+echo No group found, dropping to shell
+shell
 `
 
 var ipxeTemplate = template.Must(template.New("iPXE config").Parse(`#!ipxe
