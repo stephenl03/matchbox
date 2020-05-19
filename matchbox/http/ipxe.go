@@ -11,8 +11,8 @@ import (
 
 const ipxeBootstrap = `#!ipxe
 chain ipxe?uuid=${uuid}&mac=${mac:hexhyp}&domain=${domain}&hostname=${hostname}&serial=${serial} ||
-echo No group found, dropping to shell
-shell
+echo No group found, booting next device
+exit 1
 `
 
 var ipxeTemplate = template.Must(template.New("iPXE config").Parse(`#!ipxe
