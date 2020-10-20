@@ -4,6 +4,18 @@ Notable changes between releases.
 
 ## Latest
 
+## v0.9.0
+
+* Refresh docs and examples for Fedora CoreOS and Flatcar Linux ([#815](https://github.com/poseidon/matchbox/pull/815), [#816](https://github.com/poseidon/matchbox/pull/816))
+* Update Kubernetes manifest examples ([#791](https://github.com/poseidon/matchbox/pull/791), [#817](https://github.com/poseidon/matchbox/pull/817))
+* Update Matchbox container image publishing ([#795](https://github.com/poseidon/matchbox/pull/795))
+  * Publish Matchbox images from internal infra to Quay (`quay.io/poseidon/matchbox`)
+  * Update Go version from v1.13.4 to v1.14.9
+  * Update base image from `alpine:3.10` to `alpine:3.12` ([#784](https://github.com/poseidon/matchbox/pull/784))
+* Include `contrib/k8s` in release tarballs ([#788](https://github.com/poseidon/matchbox/pull/788))
+* Remove outdated systemd units ([#817](https://github.com/poseidon/matchbox/pull/817))
+* Remove RPM spec file (Copr publishing stopped in v0.6)
+
 ## v0.8.3
 
 * Publish docs to [https://matchbox.psdn.io](https://matchbox.psdn.io/) ([#769](https://github.com/poseidon/matchbox/pull/769))
@@ -97,7 +109,7 @@ Note: Release signing key [has changed](https://github.com/poseidon/matchbox/blo
 * Use etcd3 by default in all clusters (remove etcd2 clusters)
 * Add Terraform examples for etcd3 and self-hosted Kubernetes 1.6.1
 
-## v0.5.0 (2017-01-23) 
+## v0.5.0 (2017-01-23)
 
 * Rename project to CoreOS `matchbox`!
 * Add Profile `args` field to list kernel args

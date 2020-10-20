@@ -47,20 +47,6 @@ push:
 	@buildah push docker://$(IMAGE_REPO):$(VERSION)
 	@buildah push docker://$(IMAGE_REPO):latest
 
-# for travis only
-
-.PHONY: docker-image
-docker-image:
-	docker build --rm=true -t $(LOCAL_REPO):$(VERSION) .
-	docker tag $(LOCAL_REPO):$(VERSION) $(LOCAL_REPO):latest
-
-.PHONY: docker-push
-docker-push: docker-image
-	docker tag $(LOCAL_REPO):$(VERSION) $(IMAGE_REPO):latest
-	docker tag $(LOCAL_REPO):$(VERSION) $(IMAGE_REPO):$(VERSION)
-	docker push $(IMAGE_REPO):latest
-	docker push $(IMAGE_REPO):$(VERSION)
-
 .PHONY: update
 update:
 	@GOFLAGS="" go get -u

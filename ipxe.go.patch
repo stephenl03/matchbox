@@ -1,0 +1,15 @@
+diff --git a/matchbox/http/ipxe.go b/matchbox/http/ipxe.go
+index f865d31..22b43c9 100644
+--- a/matchbox/http/ipxe.go
++++ b/matchbox/http/ipxe.go
+@@ -10,7 +10,9 @@ import (
+ )
+ 
+ const ipxeBootstrap = `#!ipxe
+-chain ipxe?uuid=${uuid}&mac=${mac:hexhyp}&domain=${domain}&hostname=${hostname}&serial=${serial}
++chain ipxe?uuid=${uuid}&mac=${mac:hexhyp}&domain=${domain}&hostname=${hostname}&serial=${serial} ||
++echo No group found, booting next device
++exit 1
+ `
+ 
+ var ipxeTemplate = template.Must(template.New("iPXE config").Parse(`#!ipxe

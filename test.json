@@ -1,0 +1,19 @@
+{
+  "id": "some-id",
+  "name": "some-name",
+  "profile": "some-profile",
+  "selector": {
+    "mac": "52:54:00:a1:9c:ae"
+  },
+  "metadata": {
+    "meta": "data",
+    "etcd": {
+      "name": "node1"
+    },
+    "some": {
+      "nested": {
+        "data": "some-value"
+      }
+    }
+  }
+}

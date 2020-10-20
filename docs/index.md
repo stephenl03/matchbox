@@ -1,29 +1,30 @@
 # Matchbox
 
-Matchbox is a service that matches bare-metal machines to profiles that PXE boot and provision clusters. Machines are matched by labels like MAC or UUID during PXE and profiles specify a kernel/initrd, iPXE config, and Container Linux or Fedora CoreOS config.
+Matchbox is a service that matches bare-metal machines to profiles that PXE boot and provision clusters. Machines are matched by labels like MAC or UUID during PXE and profiles specify a kernel/initrd, iPXE config, and Ignition config.
 
 ## Features
 
 * Chainload via iPXE and match hardware labels
-* Provision Container Linux and Fedora CoreOS (powered by [Ignition](https://github.com/coreos/ignition))
+* Provision Fedora CoreOS or Flatcar Linux (powered by [Ignition](https://github.com/coreos/ignition))
 * Authenticated gRPC API for clients (e.g. Terraform)
 
 ## Installation
 
 Matchbox can be installed from a binary or a container image.
 
-* Install Matchbox on [Kubernetes](deployment.md#kubernetes), on a [Linux](deployment.md) host, or as a [container](deployment.md#docker)
+* Install Matchbox as a [binary](deployment.md#matchbox-binary), as a [container image](deployment.md#container-image), or on [Kubernetes](deployment.md#kubernetes)
 * Setup a PXE-enabled [network](network-setup.md)
 
 ## Tutorials
 
-[Getting started](getting-started.md) provisioning machines with Container Linux.
+Start provisioning machines with Fedora CoreOS or Flatcar Linux.
 
-* Local QEMU/KVM
-    * [matchbox with Docker](getting-started-docker.md)
-* Clusters
-    * [etcd3](getting-started-docker.md) - Install a 3-node etcd3 cluster
-    * [etcd3](https://github.com/poseidon/matchbox/tree/master/examples/terraform/etcd3-install) - Install a 3-node etcd3 cluster (terraform-based)
+* [Terraform Usage](getting-started.md)
+    * Fedora CoreOS (live PXE or PXE install to disk)
+    * Flatcar Linux (live PXE or PXE install to disk)
+* [Local QEMU/KVM](getting-started-docker.md)
+    * Fedora CoreOS (live PXE or PXE install to disk)
+    * Flatcar Linux (live PXE or PXE install to disk)
 
 ## Related
 
