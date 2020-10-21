@@ -8,8 +8,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/poseidon/matchbox/matchbox/server"
-	pb "github.com/poseidon/matchbox/matchbox/server/serverpb"
+	"github.com/stephenl03/matchbox/matchbox/server"
+	pb "github.com/stephenl03/matchbox/matchbox/server/serverpb"
 )
 
 // genericHandler returns a handler that responds with the generic config

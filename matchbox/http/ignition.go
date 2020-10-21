@@ -9,8 +9,8 @@ import (
 	ignition "github.com/coreos/ignition/config/v2_2"
 	"github.com/sirupsen/logrus"
 
-	"github.com/poseidon/matchbox/matchbox/server"
-	pb "github.com/poseidon/matchbox/matchbox/server/serverpb"
+	"github.com/stephenl03/matchbox/matchbox/server"
+	pb "github.com/stephenl03/matchbox/matchbox/server/serverpb"
 )
 
 // ignitionHandler returns a handler that responds with the Ignition config

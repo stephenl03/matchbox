@@ -9,9 +9,9 @@ import (
 	logtest "github.com/sirupsen/logrus/hooks/test"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/poseidon/matchbox/matchbox/server"
-	"github.com/poseidon/matchbox/matchbox/storage/storagepb"
-	fake "github.com/poseidon/matchbox/matchbox/storage/testfakes"
+	"github.com/stephenl03/matchbox/matchbox/server"
+	"github.com/stephenl03/matchbox/matchbox/storage/storagepb"
+	fake "github.com/stephenl03/matchbox/matchbox/storage/testfakes"
 )
 
 func TestGenericHandler(t *testing.T) {

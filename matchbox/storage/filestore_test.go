@@ -9,8 +9,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/poseidon/matchbox/matchbox/storage/storagepb"
-	fake "github.com/poseidon/matchbox/matchbox/storage/testfakes"
+	"github.com/stephenl03/matchbox/matchbox/storage/storagepb"
+	fake "github.com/stephenl03/matchbox/matchbox/storage/testfakes"
 )
 
 func TestGroupCRUD(t *testing.T) {

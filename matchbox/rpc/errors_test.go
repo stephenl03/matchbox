@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc/codes"
 
-	"github.com/poseidon/matchbox/matchbox/server"
+	"github.com/stephenl03/matchbox/matchbox/server"
 )
 
 func TestGRPCError(t *testing.T) {

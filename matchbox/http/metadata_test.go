@@ -11,7 +11,7 @@ import (
 	logtest "github.com/sirupsen/logrus/hooks/test"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/poseidon/matchbox/matchbox/storage/storagepb"
+	"github.com/stephenl03/matchbox/matchbox/storage/storagepb"
 )
 
 func TestMetadataHandler(t *testing.T) {

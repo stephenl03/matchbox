@@ -3,7 +3,7 @@ package testfakes
 import (
 	"errors"
 
-	"github.com/poseidon/matchbox/matchbox/storage/storagepb"
+	"github.com/stephenl03/matchbox/matchbox/storage/storagepb"
 )
 
 var (

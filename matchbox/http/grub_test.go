@@ -9,7 +9,7 @@ import (
 	logtest "github.com/sirupsen/logrus/hooks/test"
 	"github.com/stretchr/testify/assert"
 
-	fake "github.com/poseidon/matchbox/matchbox/storage/testfakes"
+	fake "github.com/stephenl03/matchbox/matchbox/storage/testfakes"
 )
 
 func TestGrubHandler(t *testing.T) {
