@@ -8,6 +8,7 @@ import (
 	"os"
 
 	"github.com/coreos/pkg/flagutil"
+	"github.com/sirupsen/logrus"
 	web "github.com/stephenl03/matchbox/matchbox/http"
 	"github.com/stephenl03/matchbox/matchbox/rpc"
 	"github.com/stephenl03/matchbox/matchbox/server"
@@ -15,7 +16,6 @@ import (
 	"github.com/stephenl03/matchbox/matchbox/storage"
 	"github.com/stephenl03/matchbox/matchbox/tlsutil"
 	"github.com/stephenl03/matchbox/matchbox/version"
-	"github.com/sirupsen/logrus"
 )
 
 var (

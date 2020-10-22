@@ -37,15 +37,20 @@ fmt:
 
 .PHONY: image
 image:
-	@buildah bud -t $(LOCAL_REPO):$(VERSION) .
-	@buildah tag $(LOCAL_REPO):$(VERSION) $(LOCAL_REPO):latest
+	docker build --rm=true -t $(IMAGE_REPO):$(VERSION) .
+	docker tag $(IMAGE_REPO):$(VERSION) $(IMAGE_REPO):latest
+#	@buildah bud -t $(LOCAL_REPO):$(VERSION) .
+#	@buildah tag $(LOCAL_REPO):$(VERSION) $(LOCAL_REPO):latest
 
 .PHONY: push
 push:
-	@buildah tag $(LOCAL_REPO):$(VERSION) $(IMAGE_REPO):$(VERSION)
-	@buildah tag $(LOCAL_REPO):$(VERSION) $(IMAGE_REPO):latest
-	@buildah push docker://$(IMAGE_REPO):$(VERSION)
-	@buildah push docker://$(IMAGE_REPO):latest
+	docker tag $(IMAGE_REPO):$(VERSION) $(IMAGE_REPO):latest
+	docker push $(IMAGE_REPO):latest
+	docker push $(IMAGE_REPO):$(VERSION)
+#	@buildah tag $(LOCAL_REPO):$(VERSION) $(IMAGE_REPO):$(VERSION)
+#	@buildah tag $(LOCAL_REPO):$(VERSION) $(IMAGE_REPO):latest
+#	@buildah push docker://$(IMAGE_REPO):$(VERSION)
+#	@buildah push docker://$(IMAGE_REPO):latest
 
 .PHONY: update
 update:

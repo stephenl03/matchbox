@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/stephenl03/matchbox/matchbox/storage/storagepb"
 	"github.com/sirupsen/logrus"
+	"github.com/stephenl03/matchbox/matchbox/storage/storagepb"
 )
 
 // Config initializes a fileStore.
